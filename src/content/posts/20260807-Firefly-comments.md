@@ -1,5 +1,6 @@
 ---
 title: Firefly博客添加评论功能
+description: '用 giscus 给 Firefly 博客接入评论：不依赖数据库、配置简单，基于 GitHub Discussions 且完全免费。'
 published: 2026-08-07
 tags: [Markdown, 博客, 评论区]
 category: 评论区

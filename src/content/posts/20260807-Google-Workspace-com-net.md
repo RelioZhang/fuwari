@@ -1,5 +1,6 @@
 ---
 title: 通过 Google Workspace 实现 14 人民币每年购买 com net 等顶级域名（续费同价）
+description: '借助土耳其区价格，通过 Google Workspace 以约 14 元人民币购买 com、net 等顶级域名，续费同价。'
 published: 2026-08-07
 tags: [Markdown, 博客, 域名]
 category: 域名

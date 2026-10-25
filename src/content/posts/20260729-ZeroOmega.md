@@ -1,7 +1,7 @@
 ---
 title: 'ZeroOmega 配置，规则列表网址可自动更新'
 published: 2026-07-20
-description: ''
+description: 'ZeroOmega 配置备份，含三种情景模式，规则列表网址可自动更新。'
 image: ''
 tags: [fnNAS, 绿联NAS, 浏览器扩展]
 category: Docker

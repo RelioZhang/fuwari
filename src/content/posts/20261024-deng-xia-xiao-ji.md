@@ -1,7 +1,7 @@
 ---
 title: 灯下小记
 published: 2026-10-24
-description: 灯下小记——一篇关于夜里安静时刻的随笔示例。
+description: '入夜之后，屋里安静下来。窗外偶有车声掠过，像远处水面的波纹，晃一下，又平了。'
 tags: [随笔, 散文, 生活]
 category: 随笔
 draft: false

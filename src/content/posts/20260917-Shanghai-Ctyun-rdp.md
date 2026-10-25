@@ -1,5 +1,6 @@
 ---
 title: 上海电信云电脑如何使用RDP连接
+description: '领到免费云电脑后用 Tailscale 组网，远程桌面却连不上。记录问题定位与解决办法。'
 published: 2026-09-17
 tags: [Markdown, 上海, 云电脑, rdp]
 category: 云电脑
