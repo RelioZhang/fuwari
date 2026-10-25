@@ -1,0 +1,54 @@
+---
+interface Props {
+	class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<div class:list={["card-base rounded-[var(--radius-large)] px-6 md:px-9 py-6 mt-4 onload-animation", className]}>
+	<div class="text-lg font-bold mb-4 text-black/90 dark:text-white/90">评论</div>
+	<script
+		is:inline
+		src="https://giscus.app/client.js"
+		data-repo="RelioZhang/Firefly"
+		data-repo-id="R_kgDOTozzdw"
+		data-category="Announcements"
+		data-category-id="DIC_kwDOTozzd84DC1lX"
+		data-mapping="pathname"
+		data-strict="0"
+		data-reactions-enabled="1"
+		data-emit-metadata="1"
+		data-input-position="top"
+		data-theme="preferred_color_scheme"
+		data-lang="zh-CN"
+		data-loading="lazy"
+		crossorigin="anonymous"
+		async
+	></script>
+	<script is:inline>
+		(function () {
+			function giscusTheme() {
+				return document.documentElement.classList.contains("dark") ? "dark" : "light";
+			}
+			function setTheme(iframe) {
+				if (!iframe || !iframe.contentWindow) return;
+				iframe.contentWindow.postMessage(
+					{ giscus: { setConfig: { theme: giscusTheme() } } },
+					"https://giscus.app"
+				);
+			}
+			// 站点手动切换明暗时同步给 giscus
+			new MutationObserver(function () {
+				setTheme(document.querySelector("iframe.giscus-frame"));
+			}).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+			// iframe 首次插入时同步一次
+			new MutationObserver(function (_, obs) {
+				var iframe = document.querySelector("iframe.giscus-frame");
+				if (iframe) {
+					setTheme(iframe);
+					obs.disconnect();
+				}
+			}).observe(document.body, { childList: true, subtree: true });
+		})();
+	</script>
+</div>
