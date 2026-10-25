@@ -25,6 +25,28 @@ const config = profileConfig;
         <div class="text-center text-xs text-neutral-400/70 mb-2 transition">
             已运行 <span id="site-runtime-days" class="font-bold text-[var(--primary)]">—</span> 天
         </div>
+        <div id="site-pv-wrapper" class="text-center text-xs text-neutral-400/70 mb-2 transition" style="display:none">
+            访问 <span id="busuanzi_value_site_pv" class="font-bold text-[var(--primary)]">—</span> 次
+        </div>
+        <script is:inline async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script is:inline>
+            (function () {
+                var tries = 0;
+                var timer = setInterval(function () {
+                    var el = document.getElementById("busuanzi_value_site_pv");
+                    var wrap = document.getElementById("site-pv-wrapper");
+                    if (!el || !wrap) return;
+                    var v = (el.textContent || "").trim();
+                    if (v && v !== "—") {
+                        wrap.style.display = "";
+                        clearInterval(timer);
+                    } else if (++tries > 30) {
+                        // 3 秒内没拿到数据就放弃，保持隐藏，不显示空白
+                        clearInterval(timer);
+                    }
+                }, 100);
+            })();
+        </script>
         <div class="flex flex-wrap gap-2 justify-center mb-1">
             {config.links.length > 1 && config.links.map(item =>
                     <a rel="me" aria-label={item.name} href={item.url} target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90">
