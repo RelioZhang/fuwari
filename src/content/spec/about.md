@@ -1,9 +1,9 @@
-# About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+# 关于
 
-::github{repo="saicaca/fuwari"}
+这里是「蓝宇梦欣」，我的个人博客。
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+写的大多是日常：散文、随笔，关于城市、故乡和季节的观察；偶尔也记些技术和折腾的经过——Docker、NAS、域名、云电脑，以及一路上踩过的坑。基本每天更新一篇。
+
+白天做声学设计，和混响时间、隔声量打交道。写字是另一件事，它不必有用，也不用给出结论。
+
+想聊点什么，可以在 [GitHub](https://github.com/RelioZhang) 找到我。
