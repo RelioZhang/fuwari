@@ -43,7 +43,7 @@ git merge upstream/main
 3. **第三方服务用 `<script is:inline>` 注入**，不要引新的 npm 依赖；依赖越多，`package.json` 的冲突越难解。
 4. **每次改动记到这张表里**，否则半年后 merge 冲突时不知道怎么取舍。
 
-## 六、已知问题（待处理）
+## 六、已修复的问题
 
-- `astro.config.mjs` 的 `site` 仍是 `https://fuwari.vercel.app/`，会导致 sitemap、RSS、OG 里的绝对链接错误，需要改成实际域名。
-- giscus 与 swup 的兼容：swup 切换页面时会替换 `main` 容器，评论 iframe 不会自动重新初始化，需要在 `page:load` 事件里重新注入。
+- `astro.config.mjs` 的 `site` 已改为 `https://blog.124365.xyz/`（原来指向 Fuwari 官方演示站，会让 sitemap / RSS / OG 的绝对链接出错）。
+- giscus 与 swup 的兼容已处理：组件不再在 HTML 里内联 giscus 的 script（swup 替换 `main` 时 innerHTML 插入的 script 不会执行），改为容器 `[data-giscus]` + JS 动态创建 script，并在三个时机挂载：首次加载、`swup.hooks.on("page:load")`、以及容器变化的 MutationObserver 兜底。已存在 `iframe.giscus-frame` 时跳过，避免重复注入。
