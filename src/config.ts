@@ -38,6 +38,11 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		LinkPreset.About,
 		{
+			name: "留言",
+			url: "/guestbook/",
+			external: false,
+		},
+		{
 			name: "GitHub",
 			url: "https://github.com/RelioZhang",
 			external: true,

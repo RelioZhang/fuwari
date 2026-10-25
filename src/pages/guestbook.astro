@@ -1,0 +1,24 @@
+---
+import GiscusComments from "@components/misc/GiscusComments.astro";
+import Markdown from "@components/misc/Markdown.astro";
+import { getEntry, render } from "astro:content";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+
+const entry = await getEntry("spec", "guestbook");
+
+if (!entry) {
+	throw new Error("Guestbook content not found: src/content/spec/guestbook.md");
+}
+
+const { Content } = await render(entry);
+---
+<MainGridLayout title="留言板" description="留言板">
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32 mb-4">
+        <div class="card-base z-10 px-9 py-6 relative w-full ">
+            <Markdown class="mt-2">
+                <Content />
+            </Markdown>
+        </div>
+    </div>
+    <GiscusComments title="留言" class="mb-4" />
+</MainGridLayout>
